@@ -1,65 +1,47 @@
 <?php
 /**
+ * Ce controller représente l’étape d’initialisation
+ * des variables utiles au fonctionnement du jeu.
+ * Chaque fois que ce controller est exécuté, le jeu
+ * est réinitialisé et on commence une nouvelle partie.
+ */
+
+/**
  * Un indicateur booléen du fait que le mot a été trouvé ou pas
- *
- * @var boolean
  */
-$wordFound = false;
+$_SESSION['wordFound'] = false;
 
 /**
- * Le nombre d’essais qui reste au joueur pour trouver le mot.
- *
- * @var integer
+ * Le nombre d’essais qu’il reste au joueur pour trouver le mot.
  */
-$remainingTrials = MAX_TRIALS;
+$_SESSION['remainingTrials'] = MAX_TRIALS;
 
 /**
- * Le nombre d’essais infructueux déjà fait
- *
- * @var integer
+ * Le nombre d’essais infructueux déjà faits
  */
-$trials = 0;
+$_SESSION['trials'] = 0;
 
 /**
  * Les lettres déjà essayées
- *
- * @var string
  */
-$triedLetters = '';
+$_SESSION['triedLetters'] = '';
 
 /**
  * Un tableau des lettres utilisables pour faire le select
- *
- * @var array
  */
-$lettersArray = getLettersArray();
-
-/**
- * La position du mot à trouver dans le tableau
- *
- * @var integer
- */
-$wordIndex = getRandomIndex($wordsArray);
+$_SESSION['lettersArray'] = getLettersArray();
 
 /**
  * Le mot à trouver
- *
- * @var string
  */
-$word = getWord($wordsArray, $wordIndex);
+$_SESSION['word'] = getWord();
 
 /**
  * Le nombre de lettres du mot
- *
- * @var integer
  */
-$lettersCount = strlen($word);
+$_SESSION['lettersCount'] = strlen($_SESSION['word']);
 
 /**
  * La chaîne fantôme qui masque les lettres du mot avec un caractère de remplacement
- *
- * @var string
  */
-$replacementString = getReplacementString($lettersCount);
-
-setcookie('game_data',encode(compact('trials','triedLetters','wordIndex','replacementString','lettersArray')));
+$_SESSION['replacementString'] = getReplacementString($_SESSION['lettersCount']);

@@ -39,31 +39,6 @@ function getLettersArray()
 }
 
 /**
- * Retourne une chaîne encodant un truc à encoder
- *
- * @param array $toEncode Un truc à encoder
- *
- * @return string
- */
-function encode($toEncode)
-{
-    return base64_encode(json_encode($toEncode));
-}
-
-/**
- * Retourne un array à partir de sa représentation
- * sous forme de chaîne
- *
- * @param string $toDecode La chaine qui représente l’array
- *
- * @return array
- */
-function decode($toDecode)
-{
-    return json_decode(base64_decode($toDecode), true);
-}
-
-/**
  * Retourne l’array des mots depuis le fichier qui en contient la liste
  *
  * @return mixed
@@ -74,28 +49,14 @@ function getWordsArray()
 }
 
 /**
- * Retourne un indice aléatoire du tableau des mots
- *
- * @param array $wordsArray Le tableau des mots
- *
- * @return integer
- */
-function getRandomIndex($wordsArray)
-{
-    return rand(0, count($wordsArray) - 1);
-}
-
-/**
- * Retourne un mot du tableau des mots à partir de son indice
- *
- * @param array $wordsArray Le tableau des mots
- * @param integer $wordIndex L’indice du mot
+ * Retourne un mot du tableau des mots
  *
  * @return string
  */
-function getWord($wordsArray, $wordIndex)
+function getWord()
 {
-    return str_replace(' ', '', strtolower($wordsArray[$wordIndex]));
+    $wordsArray = getWordsArray();
+    return str_replace(' ', '', strtolower($wordsArray[rand(0, count($wordsArray) - 1)]));
 }
 
 /**
