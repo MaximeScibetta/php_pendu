@@ -1,3 +1,3 @@
-# Le début du pendu fait au cours du 23 février 2017
+# Avec une db
 
-Ce repository ne contient que le code de départ tel que vu au cours. 
+Un pendu dont les mots à trouver sont stockés dans une petite db (mais où une solution de sauvetage est prévue) 

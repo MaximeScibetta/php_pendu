@@ -1,20 +1,17 @@
 <?php
 session_start();
-/**
-* Ce fichier sert à inclure le code nécessaire à une réponse
-* HTTP en GET ou en POST. Avant de faire ces inclusions, il
-* charge les mots depuis le fichier et mémorise l’Array des
-* mots dans $wordsArray
-*
-*/
-if (file_exists(SOURCE_NAME)) {
+if (file_exists(DB_INI_FILE) || file_exists(BACKUP_FILE)) {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        include 'controllers/postController.php';
+        if (isset($_POST['email'])) {
+            include 'controllers/postPlayerController.php';
+        } else {
+            include 'controllers/postGameController.php';
+        }
     } elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        include 'controllers/getController.php';
+        include 'controllers/getGameController.php';
     } else {
-        die('Houla ! Qu’est-ce que tu fais avec cette méthode HTTP ?');
+        header('Location: http://cours.app/pendu-db/errors/error_405.php');
     }
 } else {
-    die('Houla ! le fichier contenant les mots à deviner ne semble pas exister…');
+    header('Location: http://cours.app/pendu-db/errors/error_main.php');
 }
