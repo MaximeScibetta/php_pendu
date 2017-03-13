@@ -35,13 +35,6 @@ $triedLetters = '';
 $lettersArray = getLettersArray();
 
 /**
- * Une chaîne qui représente le tableau des lettres
- *
- * @var string
- */
-$serializedLetters = getSerializedLetters($lettersArray);
-
-/**
  * La position du mot à trouver dans le tableau
  *
  * @var integer
@@ -68,3 +61,5 @@ $lettersCount = strlen($word);
  * @var string
  */
 $replacementString = getReplacementString($lettersCount);
+
+setcookie('game_data',encode(compact('trials','triedLetters','wordIndex','replacementString','lettersArray')));
