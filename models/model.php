@@ -36,6 +36,7 @@ function getWordFromFile()
     $wordsArray
         = @file(BACKUP_FILE, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) ?: [];
     if ($wordsArray) {
+
         return strtolower($wordsArray[rand(0, count($wordsArray) - 1)]);
     } else {
         header('Location: http://cours.app/pendu-db/errors/error_main.php');
@@ -50,11 +51,14 @@ function getWord()
         $sql = 'SELECT word FROM pendu.words ORDER BY RAND()';
         try {
             $pdoSt = $pdo->query($sql);
+
             return strtolower($pdoSt->fetchColumn());
         } catch (PDOException $e) {
+
             return getWordFromFile();
         }
     } else {
+
         return getWordFromFile();
     }
 }
@@ -68,6 +72,7 @@ function connectDB()
         $dbConfig['DB_HOST']
     );
     try {
+
         return new PDO(
             $dsn,
             $dbConfig['DB_USER'],
@@ -78,6 +83,7 @@ function connectDB()
             ]
         );
     } catch (PDOException $e) {
+
         return false;
     }
 }

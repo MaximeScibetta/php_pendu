@@ -17,6 +17,8 @@
         <?php if (isset($_SESSION['errors']['email'])): ?>
             <div><p><?= $_SESSION['errors']['email']; ?></p></div>
         <?php endif; ?>
+        <input type="hidden" name="r" value="player">
+        <input type="hidden" name="a" value="register">
         <input type="submit" value="Jouer">
 
     </form>
