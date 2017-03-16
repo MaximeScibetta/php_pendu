@@ -12,7 +12,6 @@ function register()
     $_SESSION['errors'] = [];
     if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $_SESSION['email'] = $_POST['email'];
-        include 'controllers/gameController.php';
         initGame();
     } else {
         if (!empty($_POST['email'])) {
@@ -24,7 +23,6 @@ function register()
         } else {
             //Le joueur ne souhaite pas qu’on mémorise sa partie
             $_SESSION['email'] = '';
-            include 'controllers/gameController.php';
             initGame();
         }
     }
