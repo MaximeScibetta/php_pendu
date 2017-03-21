@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41901fb5-01f3-4cbd-8c8f-a2b6f5383c60" name="Default" comment="" />
+    <list default="true" id="41901fb5-01f3-4cbd-8c8f-a2b6f5383c60" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configs/routes.php" afterPath="$PROJECT_DIR$/configs/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/gameController.php" afterPath="$PROJECT_DIR$/controllers/gameController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/playerController.php" afterPath="$PROJECT_DIR$/controllers/playerController.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_gamesCount.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/partials/_gamesCount.php">
+      <file leaf-file-name="gameController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controllers/gameController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="4" column="15" lean-forward="false" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+            <state relative-caret-position="280">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -44,11 +48,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/controllers/gameController.php" />
         <option value="$PROJECT_DIR$/models/model.php" />
         <option value="$PROJECT_DIR$/router.php" />
-        <option value="$PROJECT_DIR$/controllers/playerController.php" />
         <option value="$PROJECT_DIR$/views/partials/_gamesCount.php" />
+        <option value="$PROJECT_DIR$/configs/routes.php" />
+        <option value="$PROJECT_DIR$/controllers/playerController.php" />
+        <option value="$PROJECT_DIR$/controllers/gameController.php" />
       </list>
     </option>
   </component>
@@ -305,7 +310,7 @@
       <updated>1489413193674</updated>
       <workItem from="1489413195400" duration="525000" />
       <workItem from="1489660433787" duration="2579000" />
-      <workItem from="1490109439366" duration="43000" />
+      <workItem from="1490109439366" duration="209000" />
     </task>
     <task id="LOCAL-00001" summary="Fix display of scores when user not registered">
       <created>1489669684659</created>
@@ -318,7 +323,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3147000" />
+    <option name="totallyTimeSpent" value="3313000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -396,7 +401,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-          <folding />
+          <folding>
+            <marker date="1489669558000" expanded="true" signature="30:167" ph="..." />
+            <marker date="1489669558000" expanded="true" signature="42:159" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -458,16 +466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1489660370000" expanded="true" signature="17:144" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/router.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
@@ -475,22 +473,6 @@
           <folding>
             <marker date="1489660370000" expanded="true" signature="84:168" ph="..." />
             <marker date="1489660370000" expanded="true" signature="455:503" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/playerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-          <folding>
-            <marker date="1489669408000" expanded="true" signature="21:118" ph="{...}" />
-            <marker date="1489669408000" expanded="true" signature="139:805" ph="{...}" />
-            <marker date="1489669408000" expanded="true" signature="263:334" ph="..." />
-            <marker date="1489669408000" expanded="true" signature="342:773" ph="..." />
-            <marker date="1489669408000" expanded="true" signature="381:624" ph="..." />
-            <marker date="1489669408000" expanded="true" signature="417:523" ph="..." />
-            <marker date="1489669408000" expanded="true" signature="632:767" ph="..." />
           </folding>
         </state>
       </provider>
@@ -536,31 +518,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/gameController.php">
+    <entry file="file://$PROJECT_DIR$/views/partials/_gamesCount.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="845">
-          <caret line="45" column="27" lean-forward="true" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="39" />
+        <state relative-caret-position="200">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
-            <marker date="1489660370000" expanded="true" signature="22:1462" ph="{...}" />
-            <marker date="1489660370000" expanded="true" signature="138:189" ph="..." />
-            <marker date="1489660370000" expanded="true" signature="197:232" ph="..." />
-            <marker date="1489660370000" expanded="true" signature="258:351" ph="..." />
-            <marker date="1489660370000" expanded="true" signature="536:770" ph="..." />
-            <marker date="1489660370000" expanded="true" signature="618:764" ph="..." />
-            <marker date="1489660370000" expanded="true" signature="796:832" ph="..." />
-            <marker date="1489660370000" expanded="true" signature="840:966" ph="..." />
-            <marker date="1489660370000" expanded="true" signature="908:960" ph="..." />
-            <marker date="1489660370000" expanded="true" signature="1101:1374" ph="..." />
-            <marker date="1489660370000" expanded="true" signature="1172:1368" ph="..." />
-            <marker date="1489660370000" expanded="true" signature="1286:1358" ph="..." />
+            <marker date="1489669558000" expanded="true" signature="30:167" ph="..." />
+            <marker date="1489669558000" expanded="true" signature="42:159" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/_gamesCount.php">
+    <entry file="file://$PROJECT_DIR$/configs/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="4" column="15" lean-forward="false" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        <state relative-caret-position="80">
+          <caret line="2" column="31" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+          <folding>
+            <marker date="1490109574000" expanded="true" signature="17:142" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/playerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding>
+            <marker date="1490109591000" expanded="true" signature="26:692" ph="{...}" />
+            <marker date="1490109591000" expanded="true" signature="150:221" ph="..." />
+            <marker date="1490109591000" expanded="true" signature="229:660" ph="..." />
+            <marker date="1490109591000" expanded="true" signature="268:511" ph="..." />
+            <marker date="1490109591000" expanded="true" signature="304:410" ph="..." />
+            <marker date="1490109591000" expanded="true" signature="519:654" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/gameController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>

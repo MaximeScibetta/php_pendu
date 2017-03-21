@@ -1,6 +1,6 @@
 <?php
 $routes = [
-    'default' => 'GET/init/player',
+    'default' => 'GET/init/game',
     'check_letter' => 'POST/check/game',
     'register_player' => 'POST/register/player',
 ];

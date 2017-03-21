@@ -1,10 +1,4 @@
 <?php
-function init()
-{
-    $_SESSION['email'] = $_SESSION['email']??'';
-
-    return ['view' => 'views/player.php'];
-}
 
 function register()
 {
