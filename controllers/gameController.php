@@ -6,48 +6,41 @@ function init()
     return ['view' => 'views/player.php'];
 }
 
-function check()
+function play()
 {
-    $_SESSION['attempts']++;
-    if (ctype_alpha($_POST['triedLetter']) && strlen($_POST['triedLetter']) === 1) {
+
+    if (is_letter($_POST['triedLetter'])) {
+        include 'models/gameModel.php';
+        include 'models/playerModel.php';
+        increaseAttempt();
         $triedLetter = $_POST['triedLetter'];
     } else {
-        $triedLetter = false;
-    }
-    if (!$triedLetter) {
         header('Location: http://cours.app/pendu/errors/error_main.php');
         exit;
     }
-    $_SESSION['triedLetters'] .= $triedLetter;
-    $_SESSION['lettersArray'][$triedLetter] = false;
 
-    $letterFound = false;
-    for ($i = 0; $i < $_SESSION['lettersCount']; $i++) {
-        $l = substr($_SESSION['word'], $i, 1);
-        if ($triedLetter === $l) {
-            $letterFound = true;
-            $_SESSION['replacementString'] = substr_replace($_SESSION['replacementString'], $l, $i, 1);
-        }
-    }
-    if (!$letterFound) {
-        $_SESSION['trials']++;
+    updateTriedLettersString($triedLetter);
+    updateLettersArray($triedLetter);
+
+    if (!is_letterInWord($triedLetter)) {
+        increaseTrials();
     } else {
-        if ($_SESSION['word'] === $_SESSION['replacementString']) {
-            $_SESSION['wordFound'] = true;
-        }
+        $_SESSION['wordFound'] = is_wordFound();
     }
-    $_SESSION['remainingTrials'] = MAX_TRIALS - $_SESSION['trials'];
+
+    updateRemainingTrials();
 
     $gamesCount = $gamesWon = '';
     if ($_SESSION['email']) {
         if ($_SESSION['wordFound'] || !$_SESSION['remainingTrials']) {
             saveGame();
-            $gamesCount = getGamesCountForCurrentPlayer();
+            $gamesCount = getGamesCount();
             if ($gamesCount) {
-                $gamesWon = getGamesWonForCurrentPlayer();
+                $gamesWon = getGamesWon();
             }
         }
     }
+
     $view = 'views/game.php';
 
     return compact('view', 'gamesCount', 'gamesWon');

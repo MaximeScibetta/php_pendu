@@ -44,7 +44,7 @@
                     <?php endforeach; ?>
                 </select>
                 <input type="hidden" name="r" value="game">
-                <input type="hidden" name="a" value="check">
+                <input type="hidden" name="a" value="play">
                 <input type="submit"
                        value="essayer cette lettre">
             </div>
