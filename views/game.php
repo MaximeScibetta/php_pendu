@@ -14,29 +14,29 @@
 </div>
 <?php if ($_SESSION['wordFound']
 ): ?>
-    <div>
-        <p class="bg-success lead">Bravo&nbsp;! Tu as trouvé le mot
+    <div class="alert alert-success" role="alert" style="width: 500px;">
+        <p>Bravo&nbsp;! Tu as trouvé le mot
             «&nbsp;<b><?= $_SESSION['word']; ?></b>&nbsp;». <a href="<?= $_SERVER['PHP_SELF']; ?>">Recommence&nbsp;!</a>
         </p>
     </div>
     <?php include('views/partials/_gamesCount.php'); ?>
 <?php elseif ($_SESSION['remainingTrials'] == 0): ?>
-    <div>
-        <p class="bg-danger lead">OOOps&nbsp;! Tu sembles bien mort&nbsp;! Le mot à trouver était
+    <div class="alert alert-danger" role="alert" style="width: 500px;">
+        <p>OOOps&nbsp;! Tu sembles bien mort&nbsp;! Le mot à trouver était
             «&nbsp;<b><?= $_SESSION['word']; ?></b>&nbsp;». <a href="<?= $_SERVER['PHP_SELF']; ?>">Recommence&nbsp;!</a>
         </p>
     </div>
     <?php include('views/partials/_gamesCount.php'); ?>
 <?php else: ?>
     <form action="<?= $_SERVER['PHP_SELF']; ?>"
-          method="post">
+          method="post" >
         <fieldset>
             <legend>Il te reste <?= $_SESSION['remainingTrials']; ?> essais pour sauver ta peau
             </legend>
             <div>
                 <label for="triedLetter">Choisis ta lettre</label>
                 <select name="triedLetter"
-                        id="triedLetter">
+                        id="triedLetter" class="custom-select mb-2 mr-sm-2 mb-sm-0">
                     <?php foreach ($_SESSION['lettersArray'] as $letter => $status): ?>
                         <?php if ($status): ?>
                             <option value="<?= $letter; ?>"><?= $letter; ?></option>
@@ -46,7 +46,7 @@
                 <input type="hidden" name="r" value="game">
                 <input type="hidden" name="a" value="play">
                 <input type="submit"
-                       value="essayer cette lettre">
+                       value="essayer cette lettre" class="btn btn-primary">
             </div>
         </fieldset>
     </form>

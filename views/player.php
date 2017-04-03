@@ -10,16 +10,19 @@
 </div>
 
 <div>
-    <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
-        <label for="email">Ton email (pas obligatoire)</label><input type="text" id="email" name="email"
-                                                                     placeholder="jon.snow@nightwatch.north"
-                                                                     value="<?= $_SESSION['email']; ?>">
-        <?php if (isset($_SESSION['errors']['email'])): ?>
-            <div><p><?= $_SESSION['errors']['email']; ?></p></div>
-        <?php endif; ?>
+    <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post" class="form-inline">
+        <label class="input-group-addon" for="email">Ton email (pas obligatoire)</label>
+        <input type="text" id="email" name="email"
+               placeholder="example@example.com"
+               value="<?= $_SESSION['email']; ?>"
+               class="form-control">
         <input type="hidden" name="r" value="player">
         <input type="hidden" name="a" value="register">
-        <input type="submit" value="Jouer">
-
+        <input type="submit" value="Jouer"  class="btn btn-primary">
     </form>
+    <?php if (isset($_SESSION['errors']['email'])): ?>
+        <div style="width: 500px; margin-top: 25px;" class="alert alert-danger" role="alert">
+            <?= $_SESSION['errors']['email']; ?>
+        </div>
+    <?php endif; ?>
 </div>
