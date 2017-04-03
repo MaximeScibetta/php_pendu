@@ -1,0 +1,10 @@
+{
+    "name": "root/pendu-23mars",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Models\\": "models/",
+            "Controllers\\": "controllers/"
+        }
+    }
+}

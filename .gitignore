@@ -1,2 +1,7 @@
 /.DS_Store
 *.xml
+.idea
+images
+datas
+db.ini
+/vendor/
